@@ -26,11 +26,11 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className={`${className} rounded-[0.3125rem] pt-1`}>
-      <div className="bg-light-grayish-blue hover:bg-grayish-blue flex h-full cursor-pointer flex-col items-center rounded-b-[0.3125rem] px-6 pb-6 pt-8">
+      <div className="bg-light-grayish-blue hover:bg-grayish-blue dark:bg-dark-desaturated-blue dark:hover:bg-desaturated-blue-hover flex h-full cursor-pointer flex-col items-center rounded-b-[0.3125rem] px-6 pb-6 pt-8">
         <div className="mb-7">
           <div className="flex items-center gap-2">
             <Image src={iconSrc} alt={iconAlt} width={20} height={20} />
-            <p className="text-dark-grayish-blue text-xs font-bold">
+            <p className="text-dark-grayish-blue dark:text-desaturated-blue text-xs font-bold">
               {username}
             </p>
           </div>
@@ -38,7 +38,7 @@ const Card: React.FC<CardProps> = ({
         <div className="mb-[0.56rem] text-[3.5rem] font-bold leading-[3rem] tracking-[-0.125rem]">
           {title}
         </div>
-        <div className="mb-[1.56rem] text-xs uppercase tracking-[0.3125rem]">
+        <div className="dark:text-desaturated-blue mb-[1.56rem] text-xs uppercase tracking-[0.3125rem]">
           {subtitle}
         </div>
         <div

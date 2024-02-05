@@ -21,7 +21,7 @@ const OverviewCard: React.FC<CardProps> = ({
   iconAlt,
 }) => {
   return (
-    <div className="bg-light-grayish-blue hover:bg-grayish-blue flex h-full cursor-pointer flex-col items-center rounded-[0.3125rem] pb-[1.19rem] pl-6 pr-[1.88rem] pt-[1.69rem]">
+    <div className="bg-light-grayish-blue hover:bg-grayish-blue dark:bg-dark-desaturated-blue dark:hover:bg-desaturated-blue-hover flex h-full cursor-pointer flex-col items-center rounded-[0.3125rem] pb-[1.19rem] pl-6 pr-[1.88rem] pt-[1.69rem]">
       <div className="mb-[1.44rem] flex w-full items-center justify-between">
         <h3 className="text-dark-grayish-blue text-sm font-bold leading-normal">
           {title}

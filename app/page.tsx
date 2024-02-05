@@ -9,20 +9,20 @@ export default function Home() {
   const { darkMode, toggleDarkMode } = useTheme()
 
   return (
-    <main className="relative flex h-full min-h-screen w-full max-w-[90rem] flex-col items-center bg-white px-6 pt-9 text-black lg:min-h-0 lg:px-40 dark:bg-black dark:text-white">
-      <div className="bg-very-pale-blue-top absolute left-0 right-0 top-0 z-0 h-[14.6875rem] rounded-b-[1.25rem]"></div>
+    <main className="dark:bg-very-dark-blue relative flex h-full min-h-screen w-full max-w-[90rem] flex-col items-center bg-white px-6 pt-9">
+      <div className="bg-very-pale-blue-top dark:bg-very-dark-blue-top absolute left-0 right-0 top-0 z-0 h-[14.6875rem] rounded-b-[1.25rem]"></div>
       <div className="relative z-10 w-full">
         <div className="flex w-full flex-col sm:flex-row sm:justify-between">
           <div className="border-gray mb-4 border-b pb-6 sm:border-none">
             <h1 className="mb-1 text-2xl font-bold leading-normal lg:text-[1.75rem]">
               Social Media Dashboard
             </h1>
-            <p className="text-dark-grayish-blue text-sm font-bold">
+            <p className="text-dark-grayish-blue dark:text-desaturated-blue text-sm font-bold">
               Total Followers: 23,004
             </p>
           </div>
           <div className="mb-10 flex items-center justify-between gap-[0.81rem]">
-            <p className="text-gray text-sm font-bold leading-normal">
+            <p className="text-gray dark:text-desaturated-blue text-sm font-bold leading-normal">
               Dark Mode
             </p>
             <Toggle isOn={darkMode} onToggle={toggleDarkMode} />
@@ -73,7 +73,7 @@ export default function Home() {
           />
         </div>
 
-        <h2 className="text-dark-grayish-blue mb-[1.5rem] mt-[2.88rem] text-2xl font-bold leading-normal">
+        <h2 className="text-dark-grayish-blue mb-[1.5rem] mt-[2.88rem] text-2xl font-bold leading-normal dark:text-white">
           Overview - Today
         </h2>
         <div className="mb-8 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4 lg:gap-[1.87rem]">

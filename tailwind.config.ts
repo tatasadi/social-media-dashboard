@@ -25,6 +25,7 @@ const config: Config = {
         "very-dark-blue-top": "hsl(232, 19%, 15%)",
         "dark-desaturated-blue": "hsl(228, 28%, 20%)", //card
         "desaturated-blue": "hsl(228, 34%, 66%)", //text
+        "desaturated-blue-hover": "hsl(228, 25%, 27%)",
         "very-pale-blue-top": "hsl(225, 100%, 98%)",
         "light-grayish-blue": "hsl(227, 47%, 96%)", //card
         "grayish-blue": "hsl(228, 33%, 91%)", //card
