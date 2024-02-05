@@ -6,12 +6,14 @@ export default function useLocalStorageState(
   { serialize = JSON.stringify, deserialize = JSON.parse } = {},
 ) {
   const [state, setState] = useState(() => {
-    const valueInLocalStorage = window.localStorage.getItem(key)
-    if (valueInLocalStorage) {
-      try {
-        return deserialize(valueInLocalStorage)
-      } catch (error) {
-        window.localStorage.removeItem(key)
+    if (typeof window !== "undefined") {
+      const valueInLocalStorage = window.localStorage.getItem(key)
+      if (valueInLocalStorage) {
+        try {
+          return deserialize(valueInLocalStorage)
+        } catch (error) {
+          window.localStorage.removeItem(key)
+        }
       }
     }
     return typeof defaultValue === "function" ? defaultValue() : defaultValue

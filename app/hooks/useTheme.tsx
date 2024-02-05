@@ -11,6 +11,7 @@ export function ThemeProvider(props: React.PropsWithChildren<{}>) {
   const [darkMode, setDarkMode] = useLocalStorageState("darkmode", true)
 
   useEffect(() => {
+    console.log(darkMode)
     document.documentElement.classList.toggle("dark", darkMode)
   }, [darkMode])
 
