@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
+import { ThemeProvider } from "./hooks/useTheme"
 
 const inter = Inter({ subsets: ["latin"], weight: ["400", "700"] })
 
@@ -27,7 +28,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} flex min-h-screen flex-col items-center justify-center`}
       >
-        {children}
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   )
