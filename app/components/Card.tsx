@@ -26,7 +26,7 @@ const Card: React.FC<CardProps> = ({
 }) => {
   return (
     <div className={`${className} rounded-[0.3125rem] pt-1`}>
-      <div className="bg-light-grayish-blue flex h-full flex-col items-center rounded-b-[0.3125rem] px-6 pb-6 pt-8">
+      <div className="bg-light-grayish-blue hover:bg-grayish-blue flex h-full cursor-pointer flex-col items-center rounded-b-[0.3125rem] px-6 pb-6 pt-8">
         <div className="mb-7">
           <div className="flex items-center gap-2">
             <Image src={iconSrc} alt={iconAlt} width={20} height={20} />
