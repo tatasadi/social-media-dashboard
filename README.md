@@ -28,8 +28,21 @@ Users should be able to:
 
 ### Screenshots
 
+Desktop light:
+
 ![](./screenshot1.png)
+
+Desktop dark:
+
 ![](./screenshot2.png)
+
+Mobile light:
+
+![](./screenshot3.png)
+
+Mobile Dark:
+
+![](./screenshot4.png)
 
 ### Links
 
