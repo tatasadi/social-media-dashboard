@@ -1,29 +1,21 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 
-export default function useLocalStorageState<T>(
+export default function useLocalStorageState(
   key: string,
-  defaultValue: T | (() => T),
+  defaultValue: boolean | string | (() => void) = "",
   { serialize = JSON.stringify, deserialize = JSON.parse } = {},
-): [T, Dispatch<SetStateAction<T>>] {
-  // Initialize state with defaultValue to avoid referencing window.localStorage on initial render
-  const [state, setState] = useState<T>(
-    typeof defaultValue === "function"
-      ? (defaultValue as () => T)()
-      : defaultValue,
-  )
-
-  useEffect(() => {
-    // Check if the value is stored in localStorage
+) {
+  const [state, setState] = useState(() => {
     const valueInLocalStorage = window.localStorage.getItem(key)
     if (valueInLocalStorage) {
       try {
-        // Only update the state if value is found
-        setState(deserialize(valueInLocalStorage))
+        return deserialize(valueInLocalStorage)
       } catch (error) {
         window.localStorage.removeItem(key)
       }
     }
-  }, [key, deserialize])
+    return typeof defaultValue === "function" ? defaultValue() : defaultValue
+  })
 
   const prevKeyRef = useRef(key)
 
@@ -33,7 +25,6 @@ export default function useLocalStorageState<T>(
       window.localStorage.removeItem(prevKey)
     }
     prevKeyRef.current = key
-    // Serialize and save the new state in localStorage whenever state or key changes
     window.localStorage.setItem(key, serialize(state))
   }, [key, state, serialize])
 

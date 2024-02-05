@@ -9,7 +9,7 @@ export default function Home() {
   const { darkMode, toggleDarkMode } = useTheme()
 
   return (
-    <main className="dark:bg-very-dark-blue relative flex h-full min-h-screen w-full max-w-[90rem] flex-col items-center bg-white px-6 pt-9">
+    <main className="dark:bg-very-dark-blue relative flex h-full min-h-screen w-full max-w-[90rem] flex-col items-center bg-white px-6 pt-9 lg:px-40">
       <div className="bg-very-pale-blue-top dark:bg-very-dark-blue-top absolute left-0 right-0 top-0 z-0 h-[14.6875rem] rounded-b-[1.25rem]"></div>
       <div className="relative z-10 w-full">
         <div className="flex w-full flex-col sm:flex-row sm:justify-between">

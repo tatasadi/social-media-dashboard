@@ -8,10 +8,7 @@ const ThemeContext = createContext<{
 } | null>(null)
 
 export function ThemeProvider(props: React.PropsWithChildren<{}>) {
-  const [darkMode, setDarkMode] = useLocalStorageState<boolean>(
-    "darkmode",
-    false,
-  )
+  const [darkMode, setDarkMode] = useLocalStorageState("darkmode", true)
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", darkMode)
